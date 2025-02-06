@@ -26,9 +26,31 @@ The **Online Electronic Store** is a web-based application that allows users to 
 
 ---
 
+# 🛠 How to Run This Project  
 
-## 1. Product Table
-```
+## Prerequisites  
+Before running the **Online Electronic Store**, ensure you have the following installed:  
+- **Java JDK 8+**  
+- **Eclipse IDE** (or any Java-supported IDE)  
+- **Apache Tomcat (Version 9 or below)** *(For Tomcat 10+, see special note)*  
+- **Oracle Database**  
+- **Git** (for version control, if needed)  
+
+---
+
+## 📂 Setup Instructions  
+
+### 1️⃣ Extract the Project  
+1. Download the project ZIP file.  
+2. Unzip and extract it to your preferred directory.  
+
+---
+
+### 2️⃣ Create Database Tables  
+Run the following SQL queries in **Oracle SQL** to create the required tables:  
+
+#### **Product Table**  
+```sql
 CREATE TABLE product (
     PCODE VARCHAR2(25) PRIMARY KEY,
     PNAME VARCHAR2(25),
@@ -37,10 +59,9 @@ CREATE TABLE product (
     PQTY VARCHAR2(25)
 );
 ```
----
 
-## 2. Registration Table
-```
+#### **Registration Table**  
+```sql
 CREATE TABLE registration (
     USERNAME VARCHAR2(25) PRIMARY KEY,
     PASSWORD VARCHAR2(25),
@@ -50,10 +71,9 @@ CREATE TABLE registration (
     PHONE VARCHAR2(20)
 );
 ```
----
 
-## 3. Admin Table
-```
+#### **Admin Table**  
+```sql
 CREATE TABLE admin (
     UNAME VARCHAR2(25) PRIMARY KEY,
     PWORD VARCHAR2(25),
@@ -64,10 +84,9 @@ CREATE TABLE admin (
     PHNO VARCHAR2(25)
 );
 ```
----
 
-## 4. Customer Table
-```
+#### **Customer Table**  
+```sql
 CREATE TABLE customer (
     UNAME VARCHAR2(25) PRIMARY KEY,
     PWORD VARCHAR2(25),
@@ -78,13 +97,60 @@ CREATE TABLE customer (
     PHNO VARCHAR2(25)
 );
 ```
----
-
-# Author
-Mihir Lohakare
-**mihirlohakare@gmail.com**
 
 ---
 
-# License
+### 3️⃣ Add Admin Credentials (Mandatory)  
+Since admin registration isn't available via UI, manually insert admin credentials into the **admin** table:  
+```sql
+INSERT INTO admin (UNAME, PWORD, FNAME, LNAME, ADDR, MID, PHNO)  
+VALUES ('admin', 'admin123', 'Xyz', 'Acb', 'Hyd', 'admin@example.com', '1234567890');
+```
+
+---
+
+### 4️⃣ Configure Database Connection  
+1. Open `DBInfo.java` (found in both `pack1` and `pack2`).  
+2. Update database credentials as per your Oracle DB setup:  
+   ```java
+   public String DBUrl="jdbc:oracle:thin:@localhost:1521:orcl\xe";
+    public String DBUserName="Your_Username";
+	public String DBPwd="Your_Password"; 
+   ```
+   
+---
+
+### 5️⃣ Configure Tomcat Server  
+1. Add **Tomcat server** in Eclipse.  
+2. Add the **`servlet-api.jar`** (already included, but check version).  
+3. If using **Tomcat 10+**, replace **`javax.servlet.*`** with **`jakarta.servlet.*`** in all servlet pages.
+
+---
+
+### 6️⃣ Run the Project 🚀  
+1. Start the **Oracle Database**.  
+2. Run the **Tomcat server** from Eclipse.  
+3. Open your browser and go to:  
+   ```
+   http://localhost:8080/OnlineElectronicStore/
+   ```
+4. Login as an **admin** (use inserted credentials) or **register as a customer**.  
+
+🎉 Your **Online Electronic Store** is now running successfully!  
+
+---
+
+# 💡 Troubleshooting  
+- **Database Connection Issue?** Check `DBInfo.java` for correct username/password.  
+- **Tomcat Error?** Ensure **servlet-api.jar** or **Jakarta API** (for Tomcat 10+) is added.  
+- **Page Not Found?** Verify the deployment path matches your project folder.  
+
+---
+
+## 🔗 Author  
+📧 **Mihir Lohakare** – [mihirlohakare@gmail.com](mailto:mihirlohakare@gmail.com)  
+
+---
+
+## License
 This project is licensed under the [MIT] License - see the LICENSE.md file for details
