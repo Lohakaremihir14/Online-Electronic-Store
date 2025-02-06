@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Cutomer Login</title>
+ </head>  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url(./customer.jpg);
+            background-repeat: no-repeat;
+  			background-size: 250vh;
+    		background-position: center;
+    		text-align: center;
+			background-size: cover;
+		   	height: 100vh;
+        }
+        .mainDiv {
+            background-color:rgba(255, 255, 255, 0.8);
+            padding: 0px 50px 30px 30px;
+            margin:10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            color: rgb(128, 0, 64);
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-family:cursive;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 8px 8px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100px;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        a{
+			text-decoration: none;	
+		}
+		
+		
+    </style>
+<body>
+    <form class="mainDiv" action="clog" method="post">
+        <h1><i>Customer Login</i></h1>
+        
+        <input type="text" id="aname" name="cname" placeholder="UserName">
+      
+        <input type="password" id="apwd" name="cpwd" placeholder="Password" required>
+        <input type="submit" value="Login"><br><br>
+        <a href="CustomerRegister.html">New Customer ???</a>
+    </form>
+</body>
+</html>
