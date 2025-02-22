@@ -60,18 +60,6 @@ CREATE TABLE product (
 );
 ```
 
-#### **Registration Table**  
-```sql
-CREATE TABLE registration (
-    USERNAME VARCHAR2(25) PRIMARY KEY,
-    PASSWORD VARCHAR2(25),
-    FIRSTNAME VARCHAR2(25),
-    LASTNAME VARCHAR2(25),
-    MAILID VARCHAR2(25),
-    PHONE VARCHAR2(20)
-);
-```
-
 #### **Admin Table**  
 ```sql
 CREATE TABLE admin (
