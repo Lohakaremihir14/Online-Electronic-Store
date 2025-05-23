@@ -140,5 +140,5 @@ VALUES ('admin', 'admin123', 'Xyz', 'Acb', 'Hyd', 'admin@example.com', '12345678
 
 ---
 
-## License
-This project is licensed under the [MIT] License - see the LICENSE.md file for details
+## License  
+This project is licensed under the [MIT License](LICENSE.txt).  
